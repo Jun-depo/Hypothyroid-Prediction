@@ -8,7 +8,9 @@ https://www.mayoclinic.org/diseases-conditions/hypothyroidism/symptoms-causes/sy
 
 The data was from:  http://archive.ics.uci.edu/ml/datasets/thyroid+disease. I used "allhypo.data" for the analysis. 
 "allhypo.names" contains the column names of the data. The data contains several categorical data and several thyroid 
-hormone measurements. Several hormone levels are reduced in disease samples.   
+hormone measurements. Several thyroid hormone (T3, TT4, FTI) levels are reduced in disease samples. 
+
+![thyroid hormones](https://user-images.githubusercontent.com/35440469/42401663-bd7c9cce-8144-11e8-8a03-0a0d4e3df302.png)
 
 There are 4 class samples in the data set as 'negative'(class 0), 'primary hypothyroid'(class 1), 'compensated hypothyroid' 
 (class 2) and 'secondary hypothyroid' (class 3). There are only two instances of class 3. The porject was mainly focus on class
@@ -29,5 +31,4 @@ I separated samples of each classes. I combined randomly selected 436 class 0 in
 at 2: 1 ratio. The data set is much more balanced, sightly bias toward class 0 to reflect the bias in the original data set. 
 There are only 2 instances of class 3 , not further analysed in the project.  
 ¶
-Since overall f1-score (calculated from precision and recall) is largely driven by large number instances of class 0. Therefore,
-is not a good parameter for measuring model's performance in term of predicting diseases. ¶   
+Since overall average f1-score (calculated from precision and recall) is largely driven by large number instances of class 0. Therefore, it is not a good parameter for measuring model's performance in term of predicting diseases. I could not really make conclusion on class 3 samples as there are only 2 instances for the class. I calculated weighted average f1-scores of class 1 and 2.   ¶   
