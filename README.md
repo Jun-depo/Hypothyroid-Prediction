@@ -19,7 +19,7 @@ The data was cleaned and scaled as in the "hypothyroid_data_processing.ipynb" fi
 
 ## The neural network model
 
-The neural Network classifier (sklearn.neural_network.MLPClassifier) was initially trained on the splited training data set.  
+The neural network classifier (sklearn.neural_network.MLPClassifier) was initially trained on the splited training data set.  
 The result was decent.  Try to improved the model, I tried random forest, logistic regression and Naive Bayes. That didn't 
 seem to improve the result too much.  The data is highly unbalanced with 7.9% total class 1, 2 and 3 instances (220). The model seems to fit more towards class 0 disease-negative instances (92.1%).  I recontructed more balanced data under the similar situation for a different project (###link), trained the model with the more balanced data, that significantly improved the model performance. 
 
@@ -31,9 +31,6 @@ Since overall average f1-score (calculated from precision and recall) is largely
 ![hypothroid classification f1-scores](https://user-images.githubusercontent.com/35440469/42402327-0f74319c-8148-11e8-97d4-aef9a5a26aa3.png)
 
 ### The code files:
-(1) hypothyroid_data_processing.ipynb
-processing, cleaning and scaling the data
-(2) hypothyroid_model_unbalanced_data.ipynb
-The code for neural network model trained on the unbalanced data¶
-(3) Thyroid models-balanced data.ipynb
-The code for neural network model trained on the balanced data¶   
+(1) hypothyroid_data_processing.ipynb---(processing, cleaning and scaling the data)
+(2) hypothyroid_model_unbalanced_data.ipynb---(the code for neural network model trained on the unbalanced data)¶
+(3) Thyroid models-balanced data.ipynb---(the code for neural network model trained on the balanced data)¶   
