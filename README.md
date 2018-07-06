@@ -13,22 +13,16 @@ hormone measurements. Several thyroid hormone (T3, TT4, FTI) levels are reduced 
 ![thyroid hormones](https://user-images.githubusercontent.com/35440469/42401663-bd7c9cce-8144-11e8-8a03-0a0d4e3df302.png)
 
 There are 4 class samples in the data set as 'negative'(class 0), 'primary hypothyroid'(class 1), 'compensated hypothyroid' 
-(class 2) and 'secondary hypothyroid' (class 3). There are only two instances of class 3. The porject was mainly focus on class
-0, class 1 and 2 classification.  
+(class 2) and 'secondary hypothyroid' (class 3). There are only two instances of class 3. The porject was mainly focus on class 0, class 1 and 2 classification.  
 
 The data was cleaned and scaled as in the "hypothyroid_data_processing.ipynb" file.   
 
-## The neural Network model
+## The neural network model
 
 The neural Network classifier (sklearn.neural_network.MLPClassifier) was initially trained on the splited training data set.  
 The result was decent.  Try to improved the model, I tried random forest, logistic regression and Naive Bayes. That didn't 
-seem to improve the result too much.  The data is highly unbalanced with 7.9% total class 1, 2 and 3 instances (220). The model 
-seems to fit more towards class 0 negativeon-disease instances (92.1%).  I recontructed more balanced data under the similar 
-situation for a different project (###link), trained the model with balanced data, that significantly improved the model 
-performance. 
+seem to improve the result too much.  The data is highly unbalanced with 7.9% total class 1, 2 and 3 instances (220). The model seems to fit more towards class 0 disease-negative instances (92.1%).  I recontructed more balanced data under the similar situation for a different project (###link), trained the model with the more balanced data, that significantly improved the model performance. 
 
-I separated samples of each classes. I combined randomly selected 436 class 0 instances, and all class 1 and 2 instances (218) 
-at 2: 1 ratio. The data set is much more balanced, sightly bias toward class 0 to reflect the bias in the original data set. 
-There are only 2 instances of class 3 , not further analysed in the project.  
+I separated samples of each classes from the data. I recombined randomly selected 436 class 0 instances, and all class 1 and 2 instances (218) at 2: 1 ratio. The data set is much more balanced, sightly bias toward class 0 to reflect the bias in the original data set. There are only 2 instances of class 3, not further analysed in the project.  
 ¶
-Since overall average f1-score (calculated from precision and recall) is largely driven by large number instances of class 0. Therefore, it is not a good parameter for measuring model's performance in term of predicting diseases. I could not really make conclusion on class 3 samples as there are only 2 instances for the class. I calculated weighted average f1-scores of class 1 and 2.   ¶   
+Since overall average f1-score (calculated from precision and recall) is largely driven by large number instances of class 0. Therefore, it is not a good for measuring model's performance in term of predicting diseases. I calculated weighted average f1-scores of class 1 and 2.   ¶   
