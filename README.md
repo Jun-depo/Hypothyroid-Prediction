@@ -32,5 +32,7 @@ Since overall average f1-score (calculated from precision and recall) is largely
 
 ### The code files:
 (1) hypothyroid_data_processing.ipynb---(processing, cleaning and scaling the data)
-(2) hypothyroid_model_unbalanced_data.ipynb---(the code for neural network model trained on the unbalanced data)¶
+
+(2) hypothyroid_model_unbalanced_data.ipynb---(the code for neural network model trained on the unbalanced data)
+¶
 (3) Thyroid models-balanced data.ipynb---(the code for neural network model trained on the balanced data)¶   
