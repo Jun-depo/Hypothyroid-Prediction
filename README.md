@@ -31,8 +31,8 @@ Since overall average f1-score (calculated from precision and recall) is largely
 ![hypothroid classification f1-scores](https://user-images.githubusercontent.com/35440469/42402327-0f74319c-8148-11e8-97d4-aef9a5a26aa3.png)
 
 ### The code files:
-(1) hypothyroid_data_processing.ipynb---(processing, cleaning and scaling the data).
+hypothyroid_data_processing.ipynb---(processing, cleaning and scaling the data).
 
-(2) hypothyroid_model_unbalanced_data.ipynb---(the code for neural network model trained on the unbalanced data).
-¶
-(3) Thyroid models-balanced data.ipynb---(the code for neural network model trained on the balanced data).¶   
+hypothyroid_model_unbalanced_data.ipynb---(the code for neural network model trained on the unbalanced data).¶
+
+Thyroid models-balanced data.ipynb---(the code for neural network model trained on the balanced data).¶   
