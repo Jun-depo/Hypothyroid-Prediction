@@ -23,11 +23,17 @@ The neural Network classifier (sklearn.neural_network.MLPClassifier) was initial
 The result was decent.  Try to improved the model, I tried random forest, logistic regression and Naive Bayes. That didn't 
 seem to improve the result too much.  The data is highly unbalanced with 7.9% total class 1, 2 and 3 instances (220). The model seems to fit more towards class 0 disease-negative instances (92.1%).  I recontructed more balanced data under the similar situation for a different project (###link), trained the model with the more balanced data, that significantly improved the model performance. 
 
-I separated samples of each classes from the data. I recombined randomly selected 436 class 0 instances, and all class 1 and 2 instances (218) at 2: 1 ratio. The data set is much more balanced, sightly bias toward class 0 to reflect the bias in the original data set. There are only 2 instances of class 3, not further analysed in the project.  
+The same approach was used here. I separated samples of each classes from the data. I recombined randomly selected 436 class 0 instances (out of 2580 instances), and all class 1 and 2 instances (218) at 2: 1 ratio. The data set is much more balanced, sightly bias toward class 0 to reflect the bias in the original data set. There are only 2 instances of class 3, not further analysed in the project.  
 
-Since overall average f1-score (calculated from precision and recall) is largely driven by large number instances of class 0. Therefore, it is not a good for measuring model's performance in term of predicting diseases. I calculated weighted average f1-scores of class 1 and 2. Finally, the models trained with balanced and unbalanced data were compared on average f1-scores of class 1 and 2 (wieghted). The score of the model trained on balanced data is 0.06 better than the one trained on unbalanced data (see comapring bar 5 and 6 in the following figure), indicating good improvement in model performance. 
+## The model performance 
+Since overall average f1-score (calculated from precision and recall) is largely driven by the large number instances of class 0. Therefore, it is not a good for measuring model's performance in predicting the diseases. I calculated weighted average f1-scores of class 1 and 2 to reflect meaurement of disease prediction. By this measurement, the score on test data of the model trained on balanced data is 0.06 better than the one trained on unbalanced data (0.91 vs 0.85, see bar 5 and 6 in the following figure), indicating significant improvement in predicting hypothroid diseases. Both models have high overall average f1-scores, indicating good overall performances.  
 
 ![hypothroid classification f1-scores](https://user-images.githubusercontent.com/35440469/42402327-0f74319c-8148-11e8-97d4-aef9a5a26aa3.png)
 
-The files: 
-¶   
+### The code files:
+(1) hypothyroid_data_processing.ipynb
+processing, cleaning and scaling the data
+(2) hypothyroid_model_unbalanced_data.ipynb
+The code for neural network model trained on the unbalanced data¶
+(3) Thyroid models-balanced data.ipynb
+The code for neural network model trained on the balanced data¶   
