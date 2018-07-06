@@ -25,5 +25,9 @@ seem to improve the result too much.  The data is highly unbalanced with 7.9% to
 
 I separated samples of each classes from the data. I recombined randomly selected 436 class 0 instances, and all class 1 and 2 instances (218) at 2: 1 ratio. The data set is much more balanced, sightly bias toward class 0 to reflect the bias in the original data set. There are only 2 instances of class 3, not further analysed in the project.  
 
-Since overall average f1-score (calculated from precision and recall) is largely driven by large number instances of class 0. Therefore, it is not a good for measuring model's performance in term of predicting diseases. I calculated weighted average f1-scores of class 1 and 2.  Finally, the models trained with balanced and unbalanced data were compared on average f1-scores of class 1 and 2 (wieghted).  The model trained on balanced data is 0.06 better, indicating good improvement in model performance. 
+Since overall average f1-score (calculated from precision and recall) is largely driven by large number instances of class 0. Therefore, it is not a good for measuring model's performance in term of predicting diseases. I calculated weighted average f1-scores of class 1 and 2. Finally, the models trained with balanced and unbalanced data were compared on average f1-scores of class 1 and 2 (wieghted). The score of the model trained on balanced data is 0.06 better than the one trained on unbalanced data (see comapring bar 5 and 6 in the following figure), indicating good improvement in model performance. 
+
+![hypothroid classification f1-scores](https://user-images.githubusercontent.com/35440469/42402327-0f74319c-8148-11e8-97d4-aef9a5a26aa3.png)
+
+The files: 
 ¶   
