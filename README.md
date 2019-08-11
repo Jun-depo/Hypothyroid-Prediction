@@ -7,7 +7,7 @@ https://www.mayoclinic.org/diseases-conditions/hypothyroidism/symptoms-causes/sy
 ## The Data  
 
 The data was from:  http://archive.ics.uci.edu/ml/datasets/thyroid+disease. I used "allhypo.data" for the analysis. 
-"allhypo.names" contains the column names of the data. Add info about the Jupyter notebook for basic data processing like fill nan values etc. 
+"allhypo.names" contains the column names of the data. Include the info about primary data processing in the Jupyter notebook list below. 
 * Hypothyroid_Get_Data.ipynb
 
 The data contains several categorical data and several thyroid 
