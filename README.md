@@ -7,7 +7,10 @@ https://www.mayoclinic.org/diseases-conditions/hypothyroidism/symptoms-causes/sy
 ## The Data  
 
 The data was from:  http://archive.ics.uci.edu/ml/datasets/thyroid+disease. I used "allhypo.data" for the analysis. 
-"allhypo.names" contains the column names of the data. The data contains several categorical data and several thyroid 
+"allhypo.names" contains the column names of the data. Including the Jupyter notebook for basic data processing like fill nan values etc. 
+* Hypothyroid_Get_Data.ipynb
+
+The data contains several categorical data and several thyroid 
 hormone measurements. Several thyroid hormone (T3, TT4, FTI) levels are reduced in disease samples. 
 
 ![thyroid hormones](https://user-images.githubusercontent.com/35440469/42401663-bd7c9cce-8144-11e8-8a03-0a0d4e3df302.png)
