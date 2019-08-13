@@ -24,3 +24,4 @@ I have tested several models. Only listed (1) Gaussian Naive Bayes (GaussianNB) 
 
 The Goal is to make a web application that performs reasonally fast. XGBoost doesn't require too much computation power and should be good choice for the app on both the performance and speed.   
 
+![Class_1_2.png]
