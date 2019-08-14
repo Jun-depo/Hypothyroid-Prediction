@@ -21,9 +21,12 @@ There are 4 class samples in the data set as 'negative'(class 0), 'primary hypot
 
 ## The model performance 
 I have tested several models. Only listed (1) Gaussian Naive Bayes (GaussianNB) and (2) XGBoost method here. 
-* Both models have extremely good performance on class 0 (no disease) F1 score 0.99 (GaussianNB) vs 1.00 (XGBoost).
-* XGBoost (XGB) F1 perfomed slightly better than GaussianNB (GNB) F1 on class 1 (primary hypothyroid) 
-signicantly better on class 1 and class 2 F1 score 0.95, 0.98 for XGBoost vs 0.92, 0.68 for GaussianNB. Only Numeric data were used in GaussianNB model, while both numeric and categorical data were used in XGBoost model.  
+(1) Both models have extremely good performance on class 0 (no disease) 
+* F1 score 1.00 (XGBoost) vs 0.99 (GaussianNB).
+(2) XGBoost (XGB) F1 perfomed slightly better than GaussianNB (GNB) F1 on class 1 (primary hypothyroid). 
+* F1 score 0.95 (XGBoost) vs 0.92 (GaussianNB).
+(3) XGBoost (XGB) are signicantly better class 2 (compensated hypothyroid)
+* F1 score 0.92 (XGBoost) vs 0.68 (GaussianNB). 
 
 The Goal is to make a web application that performs reasonally fast. XGBoost doesn't require too much computation power and should be good choice for the app on both the performance and speed.   
 
