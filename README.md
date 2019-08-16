@@ -29,5 +29,7 @@ The Goal is to make a web application that performs reasonally fast. XGBoost doe
 
 <img src="Class_1_2.png" style="width:700px;height:300px;">
 
-### To do
-* Plan to export onehotencoding params, so it can be used by another programs to make an app. 
+### Things to do for an app
+* write a function to process training data, export related params for processing the test in exactly the same way.  
+* export onehotencoding params that be reconstructed to onehot_encode the test data in the same manner. 
+* use flaskapp to build web app. 
