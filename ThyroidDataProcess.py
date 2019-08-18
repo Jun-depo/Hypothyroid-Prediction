@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import json
+from sklearn.preprocessing import OneHotEncoder
 
 column_names = ['age', 'sex', 'on thyroxine', 'query on thyroxine', 'on antithyroid medication', 'sick', 'pregnant', 'thyroid surgery', 'I131 treatment', 'query hypothyroid', 'query hyperthyroid', 'lithium', 'goitre', 'tumor', 'hypopituitary', 'psych', 'TSH measured', 'TSH', 'T3 measured', 'T3', 'TT4 measured', 'TT4', 'T4U measured', 'T4U', 'FTI measured', 'FTI', 'TBG measured', 'TBG', 'referral source', 'classes']
 
@@ -47,7 +48,25 @@ def data_processing(data_path):
     for i in fillna_columns: 
         df.loc[np.isnan(df[i]), i] = train_ave[i][0].astype(np.float32)
         
-    return df
+    df['TSH_ln'] = np.log(df['TSH'])
+    
+    feature_cat = [ 'sex', 'on thyroxine', 'query on thyroxine','on antithyroid medication', 'sick',
+               'pregnant', 'thyroid surgery','I131 treatment', 'query hypothyroid', 
+               'query hyperthyroid', 'lithium', 'goitre', 'tumor', 'hypopituitary', 'psych', 
+               'TSH measured', 'T3 measured', 'TT4 measured', 'T4U measured', 'FTI measured', 'referral source',]
+    
+    onehot_encoder = OneHotEncoder(sparse=False, n_values=np.load('onehot_encoder_n_value_.npy'), handle_unknown='ignore')
+    
+    X_cat = onehot_encoder.fit_transform(df[feature_cat])
+    
+    feature_num = ['age','TSH_ln','T3', 'TT4', 'T4U', 'FTI']
+    X_num = df[feature_num].values
+    
+    X = np.concatenate((X_num, X_cat), axis=1) 
+    
+    y = df['classes'].values.astype(int)
+        
+    return X, y
     
     
     
