@@ -6,14 +6,22 @@ column_names = ['age', 'sex', 'on thyroxine', 'query on thyroxine', 'on antithyr
 
 train_ave = pd.read_json('fillna_training_average.json', lines=True)
 
-def data_processing(data_path, numeric_column_average_training):
+def data_processing(data_path):
     
+    """
+    This function process hypothroid data, transform data in more standard fashion to eliminate possible uneven data processing between development and test data inferences.
+    Input:
+    data_path:  the path to the location of the data
+    
+    """
+    column_names = ['age', 'sex', 'on thyroxine', 'query on thyroxine', 'on antithyroid medication', 'sick', 'pregnant', 'thyroid surgery', 'I131 treatment', 'query hypothyroid', 'query hyperthyroid', 'lithium', 'goitre', 'tumor', 'hypopituitary', 'psych', 'TSH measured', 'TSH', 'T3 measured', 'T3', 'TT4 measured', 'TT4', 'T4U measured', 'T4U', 'FTI measured', 'FTI', 'TBG measured', 'TBG', 'referral source', 'classes']
+   
     df =pd.read_csv(data_path, header=None, names=column_names)
     df_class = df["classes"].str.split('.\|', 1, expand=True).rename(columns={0:'classes', 1:'id?'})
     df["classes"] = df_class["classes"]
     
     #both 'TBG', 'TBG measured' columns contain only single value for each column
-    data.drop(labels=['TBG', 'TBG measured'], axis=1, index=None, columns=None, level=None, inplace=True, errors='raise')     
+    df.drop(labels=['TBG', 'TBG measured'], axis=1, index=None, columns=None, level=None, inplace=True, errors='raise')     
 
     # create dictionary for replacing missing value as np.nan, "f" as 0, "t" as 1, "F" as 0, "M" as 1
     repl = {"?": np.nan, "f":0, "t": 1, "F": 0, "M":1}
@@ -31,13 +39,16 @@ def data_processing(data_path, numeric_column_average_training):
     
     # change numeric data type from string to float
     tofloat_columns = ["age", "sex", "TSH", "T3", "TT4", "T4U", "FTI"]
-    data[tofloat_columns] = data[tofloat_columns].astype(np.float32)
+    df[tofloat_columns] = df[tofloat_columns].astype(np.float32)
     # filling numeric columns nan values with average values of  columns
     fillna_columns = ['age', 'TSH', 'T3', 'TT4', 'T4U', 'FTI']
     
     train_ave = pd.read_json('fillna_training_average.json', lines=True)
     for i in fillna_columns: 
         df.loc[np.isnan(df[i]), i] = train_ave[i][0].astype(np.float32)
+        
+    return df
+    
     
     
     
