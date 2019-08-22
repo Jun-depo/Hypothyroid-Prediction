@@ -29,6 +29,12 @@ The Goal is to make a web application that performs reasonally fast. XGBoost doe
 
 <img src="Class_1_2.png" style="width:700px;height:300px;">
 
+### Feature importance
+
+<img src="Missing numeric feature comparison.png" style="width:700px;height:300px;">
+
+
+
 ### Things to do for an app
 * write a function that uses params obtained from processing training data, to process test data in exactly the same way.  
 * export onehotencoding params that be reconstructed to onehot_encode the test data in the same manner. 
