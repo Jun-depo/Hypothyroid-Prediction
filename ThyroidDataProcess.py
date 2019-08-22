@@ -7,13 +7,14 @@ column_names = ['age', 'sex', 'on thyroxine', 'query on thyroxine', 'on antithyr
 
 train_ave = pd.read_json('fillna_training_average.json', lines=True)
 
-def data_processing(data_path):
+def data_processing(data_path, train_df_ave_path):
     
     """
     This function process hypothroid data, transform data in more standard fashion to eliminate possible uneven data processing between development and test data inferences.
+
     Input:
     data_path:  the path to the location of the data
-    
+    train_df_ave_path: path to json file that contains training data average for numeric columns.  The average number is used to fill the missing value.   
     """
     column_names = ['age', 'sex', 'on thyroxine', 'query on thyroxine', 'on antithyroid medication', 'sick', 'pregnant', 'thyroid surgery', 'I131 treatment', 'query hypothyroid', 'query hyperthyroid', 'lithium', 'goitre', 'tumor', 'hypopituitary', 'psych', 'TSH measured', 'TSH', 'T3 measured', 'T3', 'TT4 measured', 'TT4', 'T4U measured', 'T4U', 'FTI measured', 'FTI', 'TBG measured', 'TBG', 'referral source', 'classes']
    
@@ -44,31 +45,22 @@ def data_processing(data_path):
     # filling numeric columns nan values with average values of  columns
     fillna_columns = ['age', 'TSH', 'T3', 'TT4', 'T4U', 'FTI']
     
-    train_ave = pd.read_json('fillna_training_average.json', lines=True)
+    train_ave = pd.read_json(train_df_ave_path, lines=True)
     for i in fillna_columns: 
         df.loc[np.isnan(df[i]), i] = train_ave[i][0].astype(np.float32)
         
     df['TSH_ln'] = np.log(df['TSH'])
+        
+    return df
     
-    feature_cat = [ 'sex', 'on thyroxine', 'query on thyroxine','on antithyroid medication', 'sick',
-               'pregnant', 'thyroid surgery','I131 treatment', 'query hypothyroid', 
-               'query hyperthyroid', 'lithium', 'goitre', 'tumor', 'hypopituitary', 'psych', 
-               'TSH measured', 'T3 measured', 'TT4 measured', 'T4U measured', 'FTI measured', 'referral source',]
+    
+def get_Xy(df, feature_cat, feature_num): 
     
     onehot_encoder = OneHotEncoder(sparse=False, n_values=np.load('onehot_encoder_n_value_.npy'), handle_unknown='ignore')
     
     X_cat = onehot_encoder.fit_transform(df[feature_cat])
-    
-    feature_num = ['age','TSH_ln','T3', 'TT4', 'T4U', 'FTI']
     X_num = df[feature_num].values
     
     X = np.concatenate((X_num, X_cat), axis=1) 
-    
     y = df['classes'].values.astype(int)
-        
-    return X, y
-    
-    
-    
-    
-    
+    return X, y  
