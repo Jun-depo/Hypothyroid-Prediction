@@ -29,9 +29,11 @@ The Goal is to make a web application that performs reasonally fast. XGBoost doe
 
 <img src="Class_1_2.png" style="width:700px;height:300px;">
 
-### Feature importance
+### Which features are importance ?
 
 <img src="Missing numeric feature comparison.png" style="width:700px;height:300px;">
+
+<img src="Missing categorical feature comparison.png" style="width:700px;height:600px;">
 
 
 
