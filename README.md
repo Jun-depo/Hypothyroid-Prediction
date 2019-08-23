@@ -29,7 +29,7 @@ The Goal is to make a web application that performs reasonally fast. XGBoost doe
 
 <img src="Class_1_2.png" style="width:700px;height:300px;">
 
-### Which features are more importance for the predictions?
+### Which features are more important for the predictions?
 
 I trained the models that took one feature (column) away from training, cross-validation to determine if that feature is important afor the predicition. If a feature is important for hypothyroid prediction, taking it away causes the model to be less accurate in prediction.   
 
@@ -43,7 +43,7 @@ I trained the models that took one feature (column) away from training, cross-va
 
 ### How does the model with the 3 numeric and 4 categorical features perform ? 
 
-As mentioned above, the 3 numeric and 4 categorical features are important for the model prediction in a setting that the model prediction becomes less accurate when removing one of these features away. I was curious whether I can build a good model with just these 7 features.   
+As mentioned above, the 3 numeric and 4 categorical features are important for the model prediction in a setting that the model prediction becomes less accurate when removing one of these features away. I was curious whether I could build a good model with just these 7 features.   
 
 ### Things to do for an app
 * write a function that uses params obtained from processing training data, to process test data in exactly the same way.  
