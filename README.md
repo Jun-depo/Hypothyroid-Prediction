@@ -33,11 +33,11 @@ The Goal is to make a web application that performs reasonally fast. XGBoost doe
 
 I trained the models that took one feature (column) away from training, cross-validation to determine if that feature is important afor the predicition. If a feature is important for hypothyroid prediction, taking it away causes the model to be less accurate in prediction.   
 
-* "Tsh_ln (ln(TSH))", "TT4", "FTI" are import for the hypothyroid prediction among numeric columns.   
+* "TSH_ln", "TT4", "FTI" are import for the hypothyroid prediction among numeric columns.   
 
 <img src="Missing numeric feature comparison.png" style="width:700px;height:300px;">
 
-* "on Thyroxine", "Thyroid surgery", "TT4 measured" and "referral source" are important categorical features for the prediction
+* "on thyroxine", "thyroid surgery", "TT4 measured" and "referral source" are important categorical features for the prediction
 
 <img src="Missing categorical feature comparison.png" style="width:700px;height:600px;">
 
