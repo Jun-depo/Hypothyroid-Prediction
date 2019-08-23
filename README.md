@@ -33,11 +33,17 @@ The Goal is to make a web application that performs reasonally fast. XGBoost doe
 
 I trained the models that took one feature (column) away from training, cross-validation to determine if that feature is important afor the predicition. If a feature is important for hypothyroid prediction, taking it away causes the model to be less accurate in prediction.   
 
+* "Tsh_ln (ln(TSH))", "TT4", "FTI" are import for the hypothyroid prediction among numeric columns.   
+
 <img src="Missing numeric feature comparison.png" style="width:700px;height:300px;">
+
+"on Thyroxine", "Thyroid surgery", "TT4 measured" and "referral source" are important categorical features for the prediction
 
 <img src="Missing categorical feature comparison.png" style="width:700px;height:600px;">
 
+### How does the model with the 3 numeric and 4 categorical features perform ? 
 
+As mentioned above, the 3 numeric and 4 categorical features are important for the model prediction in a setting that the model prediction becomes less accurate when removing one of these features away. I was curious whether I can build a good model with just these 7 features.   
 
 ### Things to do for an app
 * write a function that uses params obtained from processing training data, to process test data in exactly the same way.  
