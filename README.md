@@ -20,7 +20,7 @@ There are 4 class samples in the data set as 'negative'(class 0), 'primary hypot
 
 
 ### The model performance 
-I have tested several models. Only listed (1) Gaussian Naive Bayes (GaussianNB) and (2) XGBoost method here. The model performences were measured by f1-scores which accounts for both precision and recall. You can read more ![here](https://en.wikipedia.org/wiki/F1_score)
+I have tested several models. Only listed (1) Gaussian Naive Bayes (GaussianNB) and (2) XGBoost method here. The model performences were measured by f1-scores which accounts for both precision and recall. You can read more [here](https://en.wikipedia.org/wiki/F1_score)
 * (1) XGBoost(XGB) and GaussianNB (GNB) both performed extremely well on class 0 (no disease) with F1 score 1.00 (XGBoost) vs 0.99 (GaussianNB).
 * (2) XGB perfomed slightly better than GNB on class 1 (primary hypothyroid) with F1 score 0.95 (XGB) vs 0.92 (GNB).
 * (3) XGB) was signicantly better than GNB on class 2 (compensated hypothyroid) with F1 score 0.92 (XGB) vs 0.68 (GNB). 
