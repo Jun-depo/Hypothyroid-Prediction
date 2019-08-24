@@ -51,6 +51,6 @@ As mentioned above, the 3 numeric and 4 categorical features are important for t
 
 
 ### Things to do for an app
-* write a function that uses params obtained from processing training data, to process test data in exactly the same way.  
-* export onehotencoding params that can be reconstructed to onehot_encode the test data in the same manner as the training data. 
+* Write a function that uses params obtained from processing training data, to process test data in exactly the same way.  
+* Export onehotencoding params that can be used to reconstruct onehot_encoder that encodes test data in the same manner as the training data. 
 * use Flask to build a web app.  I will described the app in a separate depository.  
