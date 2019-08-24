@@ -20,7 +20,7 @@ There are 4 class samples in the data set as 'negative'(class 0), 'primary hypot
 
 
 ### The model performance 
-I have tested several models. Only listed (1) Gaussian Naive Bayes (GaussianNB) and (2) XGBoost method here. 
+I have tested several models. Only listed (1) Gaussian Naive Bayes (GaussianNB) and (2) XGBoost method here. The model performences were measured by f1-scores which accounts for both precision and recall. You can find more about these ![here](https://en.wikipedia.org/wiki/F1_score)
 * (1) XGBoost(XGB) and GaussianNB (GNB) both performed extremely well on class 0 (no disease) with F1 score 1.00 (XGBoost) vs 0.99 (GaussianNB).
 * (2) XGB perfomed slightly better than GNB on class 1 (primary hypothyroid) with F1 score 0.95 (XGB) vs 0.92 (GNB).
 * (3) XGB) was signicantly better than GNB on class 2 (compensated hypothyroid) with F1 score 0.92 (XGB) vs 0.68 (GNB). 
@@ -33,11 +33,11 @@ The Goal is to make a web application that performs reasonally fast. XGBoost doe
 
 I trained the models that took one feature (column) away from training, cross-validation to determine if that feature is important afor the predicition. If a feature is important for hypothyroid prediction, taking it away causes the model to be less accurate in prediction.   
 
-* "TSH_ln", "TT4", "FTI" are import for the hypothyroid prediction among numeric columns.   
+#### "TSH_ln", "TT4", "FTI" are import for the hypothyroid prediction among numeric columns.   
 
 <img src="Missing numeric feature comparison.png" style="width:700px;height:300px;">
 
-* "on thyroxine", "thyroid surgery", "TT4 measured" and "referral source" are important categorical features for the prediction
+#### "on thyroxine", "thyroid surgery", "TT4 measured" and "referral source" are important categorical features for the prediction
 
 <img src="Missing categorical feature comparison.png" style="width:700px;height:600px;">
 
