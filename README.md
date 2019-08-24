@@ -43,9 +43,13 @@ I trained the models that took one feature (column) away from training, cross-va
 
 ### How does the model with the 3 numeric and 4 categorical features perform ? 
 
-As mentioned above, the 3 numeric and 4 categorical features are important for the model prediction in a setting that the model prediction becomes less accurate when removing one of these features away. I was curious whether I could build a good model with just these 7 features.   
+As mentioned above, the 3 numeric and 4 categorical features are important for the model prediction in a setting that the model prediction becomes less accurate when removing one of these features away. I was curious whether I could build a good model with just these 7 features. 
+
+<img src="XGB_Mini_vs_allfeatures.png.png" style="width:900px;height:300px;">
+
+The mini model performed slightly below the model with all features.  I will try to build an app based on 7 feature mini model.  
 
 ### Things to do for an app
 * write a function that uses params obtained from processing training data, to process test data in exactly the same way.  
-* export onehotencoding params that be reconstructed to onehot_encode the test data in the same manner. 
-* use flaskapp to build web app. 
+* export onehotencoding params that be reconstructed to onehot_encode the test data in the same manner as the training data. 
+* use flaskapp to build web app.  I will described the app in a separate depository.  
