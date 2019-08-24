@@ -47,7 +47,7 @@ As mentioned above, the 3 numeric and 4 categorical features are important for t
 
 <img src="XGB_Mini_vs_allfeatures.png" style="width:900px;height:300px;">
 
-The mini model performed slightly below the model with all features.  I will try to build an app based on 7 feature mini model.  
+The mini model performed slightly below the model with all features.  However, the F1-scores from min_model are very close the regular model. Therefore, I will try to build an app based on 7 feature mini model. 
 
 ### Things to do for an app
 * write a function that uses params obtained from processing training data, to process test data in exactly the same way.  
