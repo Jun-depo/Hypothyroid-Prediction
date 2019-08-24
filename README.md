@@ -45,7 +45,7 @@ I trained the models that took one feature (column) away from training, cross-va
 
 As mentioned above, the 3 numeric and 4 categorical features are important for the model prediction in a setting that the model prediction becomes less accurate when removing one of these features away. I was curious whether I could build a good model with just these 7 features. 
 
-<img src="XGB_Mini_vs_allfeatures.png.png" style="width:900px;height:300px;">
+<img src="XGB_Mini_vs_allfeatures.png" style="width:900px;height:300px;">
 
 The mini model performed slightly below the model with all features.  I will try to build an app based on 7 feature mini model.  
 
