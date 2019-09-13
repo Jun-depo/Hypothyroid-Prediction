@@ -13,7 +13,7 @@ The data was from:  http://archive.ics.uci.edu/ml/datasets/thyroid+disease. I us
 The data contains several categorical data and several thyroid 
 hormone measurements. Several thyroid hormone (T3, TT4, FTI) levels are reduced in disease samples. 
 
-[thyroid hormones](https://user-images.githubusercontent.com/35440469/42401663-bd7c9cce-8144-11e8-8a03-0a0d4e3df302.png)
+![thyroid hormones](https://user-images.githubusercontent.com/35440469/42401663-bd7c9cce-8144-11e8-8a03-0a0d4e3df302.png)
 
 There are 4 class samples in the data set as 'negative'(class 0), 'primary hypothyroid'(class 1), 'compensated hypothyroid' 
 (class 2) and 'secondary hypothyroid' (class 3). There are only two instances of class 3. The porject mainly focused on class 0, class 1 and 2 classification.  
